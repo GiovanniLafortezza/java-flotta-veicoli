@@ -5,7 +5,7 @@ public class Motorcycles extends Vehicles{
     private boolean easel;
 
     // ---------------- COSTRUTTORI -----------------
-    public Motorcycles(String plate, LocalDate registrationYear, boolean easel) {
+    public Motorcycles(String plate, int registrationYear, boolean easel) throws IllegalArgumentException{
         super(plate, registrationYear);
         this.easel = easel;
     }

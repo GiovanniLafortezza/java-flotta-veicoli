@@ -6,8 +6,9 @@ public class Cars extends Vehicles{
 
 
     // ---------------- COSTRUTTORI -----------------
-    public Cars(String plate, LocalDate registrationYear, int numberOfDoors) {
+    public Cars(String plate, int registrationYear, int numberOfDoors) throws IllegalArgumentException{
         super(plate, registrationYear);
+        checkDoors(numberOfDoors);
         this.numberOfDoors = numberOfDoors;
     }
 
@@ -17,7 +18,14 @@ public class Cars extends Vehicles{
         return numberOfDoors;
     }
 
-    public void setNumberOfDoors(int numberOfDoors) {
+    public void setNumberOfDoors(int numberOfDoors) throws  IllegalArgumentException{
+        checkDoors(numberOfDoors);
         this.numberOfDoors = numberOfDoors;
+    }
+
+    // ---------------- VALIDATOR -----------------
+    private void checkDoors(int numberOfDoors) throws IllegalArgumentException {
+        if (numberOfDoors < 3 && numberOfDoors > 5)
+            throw new IllegalArgumentException("ERROR : NUMBER OF DOORS IS NOT VALID");
     }
 }
