@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+
 
 public class Motorcycles extends Vehicles{
     // ---------------- ATTRIBUTI -----------------
@@ -19,4 +19,6 @@ public class Motorcycles extends Vehicles{
     public void setEasel(boolean easel) {
         this.easel = easel;
     }
+
+
 }

@@ -1,7 +1,6 @@
-import java.time.LocalDate;
-import java.util.Locale;
 
-public class Vehicles {
+
+public abstract class Vehicles {
     // Ogni veicolo ha un numero di targa univoco e un anno di immatricolazione
 
     // ---------------- ATTRIBUTI -----------------
@@ -39,12 +38,12 @@ public class Vehicles {
     // ---------------- VALIDATORS -----------------
 
     private void checkYear(int registrationYear) throws IllegalArgumentException {
-        if (registrationYear < 1900 && registrationYear > 2023)
+        if (registrationYear < 1900 || registrationYear > 2023)
             throw new IllegalArgumentException("ERROR : YEAR OF REGISTRATION IS NOT VALID");
     }
 
     private void checkPlate(String plate)   throws IllegalArgumentException{
-        if (this.plate == plate.toLowerCase()) {
+        if (plate.equals(plate.toLowerCase())) {
             throw new IllegalArgumentException("ERROR : ENTER UPPER CASE CHARACTERS AT THE PLATE");
         }
     }

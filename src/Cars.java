@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+
 
 public class Cars extends Vehicles{
     // ---------------- ATTRIBUTI -----------------
@@ -25,7 +25,9 @@ public class Cars extends Vehicles{
 
     // ---------------- VALIDATOR -----------------
     private void checkDoors(int numberOfDoors) throws IllegalArgumentException {
-        if (numberOfDoors < 3 && numberOfDoors > 5)
+        if (numberOfDoors < 3 || numberOfDoors > 5)
             throw new IllegalArgumentException("ERROR : NUMBER OF DOORS IS NOT VALID");
     }
+
+
 }
