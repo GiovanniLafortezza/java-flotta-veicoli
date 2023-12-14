@@ -22,8 +22,27 @@ public class FleetManager {
 
     // ---------------- METODI -----------------
 
-     public void addVehicle(Vehicles vehicles) {
-         listVehicles.add(vehicles);
+    public void addVehicle(Vehicles vehicles) {
+        listVehicles.add(vehicles);
+    }
+     public void checkAddVehicle(Vehicles newVehicles) {
+         boolean isEqual = false;
+         int i = 0;
+         while (!isEqual && i < listVehicles.size()) {
+             for (Vehicles vehicles : listVehicles) {
+                 i++;
+                 if (vehicles.getPlate().equals(newVehicles.getPlate())) {
+                     isEqual = true;
+                 }
+             }
+         }
+
+         if (isEqual == true) {
+             System.out.println("ERRORE : VEICOLO CON LA STESSA TARGA");
+         } else {
+             listVehicles.add(newVehicles);
+         }
+
      }
 
      public boolean findVehicle(String plate) {
